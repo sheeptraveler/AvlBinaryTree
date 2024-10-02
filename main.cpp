@@ -1,6 +1,5 @@
 #include <iostream>
-#include "AvlBinaryTree.cpp"
-#include "Node.cpp"
+#include "AvlBinaryTree.h"
 int main(){
 
   return 0;

@@ -1,8 +1,5 @@
-#ifndef AVL_BINARY_TREE
-#define AVL_BINARY_TREE
-
-#include "Node.cpp"
 #include <iostream>
+#include "AvlBinaryTree.h"
 using namespace std;
 
 void printInOrder(struct Node * node){
@@ -52,7 +49,9 @@ int balancingFactor(struct Node* node){
 }
 
 struct Node* leftRotation(struct Node* node){
-  struct Node* newRoot = node->right;
+  struct Node* newRoot = new Node(); 
+  newRoot = node->right;
+
   node->right = newRoot->left;
   newRoot->left = node;
 
@@ -67,4 +66,19 @@ struct Node* rightRotation(struct Node* node){
   return newRoot;
 }
 
-#endif
+struct Node* rightLeftRotation(struct Node* node){
+  node->right = rightRotation(node->right);
+  return leftRotation(node);
+}
+
+struct Node* leftRightRotation(struct Node* node){
+  node->left = leftRotation(node->left);
+  return rightRotation(node);
+}
+
+struct Node* insertion(struct Node* root, int key){
+  if (root == nullptr){
+      
+  }
+}
+
